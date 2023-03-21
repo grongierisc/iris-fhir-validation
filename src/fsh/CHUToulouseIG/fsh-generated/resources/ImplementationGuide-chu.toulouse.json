@@ -1,0 +1,98 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "chu.toulouse",
+  "url": "http://intersystems.com/fhir/chu/toulouse/ImplementationGuide/chu.toulouse",
+  "version": "0.1.0",
+  "name": "CHUToulouseIG",
+  "status": "draft",
+  "publisher": "InterSystems",
+  "contact": [
+    {
+      "name": "InterSystems",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.intersystems.com"
+        }
+      ]
+    }
+  ],
+  "packageId": "chu.toulouse",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/MyBundle"
+        },
+        "name": "MyBundle",
+        "description": "An example profile of the Bundle resource.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/MyPatient"
+        },
+        "name": "MyPatient",
+        "description": "An example profile of the Patient resource.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/birthsex-extension"
+        },
+        "name": "Birth Sex Extension",
+        "description": "A code classifying the person's sex assigned at birth",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/birthsex-valueset"
+        },
+        "name": "Birth Sex",
+        "description": "Codes for assigning sex at birth",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Bundle/BundleExample"
+        },
+        "name": "BundleExample",
+        "description": "An example of a bundle",
+        "exampleCanonical": "http://intersystems.com/fhir/chu/toulouse/StructureDefinition/MyBundle"
+      },
+      {
+        "reference": {
+          "reference": "Patient/PatientExample"
+        },
+        "name": "PatientExample",
+        "description": "An example of a patient",
+        "exampleCanonical": "http://intersystems.com/fhir/chu/toulouse/StructureDefinition/MyPatient"
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2023+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      }
+    ]
+  }
+}
