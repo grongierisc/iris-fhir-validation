@@ -22,7 +22,7 @@
     set mod.UseSharedMemory = 1
     set mod.Resource = ""
     set mod.JavaHome = "/usr/lib/jvm/java-11-openjdk-amd64"
-    set mod.ClassPath = "/irisdev/app/src/java/:/irisdev/app/src/java/lib/validator_cli.jar"
+    set mod.ClassPath = "/tmp/java/:/tmp/java/lib/validator_cli.jar"
     do $system.external.modifyServer(mod)
 
     Do $classMethod("HS.HC.FHIRSQL.Server.FHIRRepository","SetupInteractions")

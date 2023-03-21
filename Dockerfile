@@ -28,7 +28,16 @@ RUN apt-get update && apt-get install -y \
 
 USER ${ISC_PACKAGE_MGRUSER}
 
-RUN pip3 install iknowpy
+# build the java wrapper
+RUN mkdir -p /tmp/java/Suchi
+RUN mkdir -p /tmp/java/lib && \
+	cd /tmp/java/lib && \
+	wget https://github.com/grongierisc/iris-fhir-validation/releases/download/v0.0.1/validator_cli.jar 
+COPY src/java/Suchi /tmp/java/Suchi
+
+RUN cd /tmp/java/Suchi && \
+	mkdir -p /tmp/java/lib && \
+	javac JavaValidatorFacade.java -classpath ../lib/validator_cli.jar -d . 
 
 # Python stuff
 ENV IRISUSERNAME "SuperUser"
