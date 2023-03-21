@@ -11,7 +11,7 @@
       "valueCode": "not-classified"
     }
   ],
-  "url": "http://intersystems.com/fhir/chu/toulouse/StructureDefinition/MyBundle",
+  "url": "http://example.org/StructureDefinition/MyBundle",
   "version": "0.1.0",
   "name": "MyBundle",
   "status": "active",
@@ -79,7 +79,7 @@
           {
             "code": "Patient",
             "profile": [
-              "http://intersystems.com/fhir/chu/toulouse/StructureDefinition/MyPatient"
+              "http://example.org/StructureDefinition/MyPatient"
             ]
           }
         ]

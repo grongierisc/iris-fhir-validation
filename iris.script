@@ -9,7 +9,7 @@
 
     set namespace="FHIRSERVER"
     Set appKey = "/fhir/r4"
-    Set strategyClass = "SEMeeting2023.FHIRValidationInteractionsStrategy"
+    Set strategyClass = "Suchi.FHIRValidationInteractionsStrategy"
     set metadataPackages = $lb("hl7.fhir.r4.core@4.0.1")
 
     //Install a Foundation namespace and change to it

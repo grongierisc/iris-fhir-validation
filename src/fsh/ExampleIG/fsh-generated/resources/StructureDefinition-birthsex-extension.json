@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "birthsex-extension",
-  "url": "http://intersystems.com/fhir/chu/toulouse/StructureDefinition/birthsex-extension",
+  "url": "http://example.org/StructureDefinition/birthsex-extension",
   "version": "0.1.0",
   "name": "BirthSexExtension",
   "title": "Birth Sex Extension",
@@ -42,7 +42,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "http://intersystems.com/fhir/chu/toulouse/StructureDefinition/birthsex-extension"
+        "fixedUri": "http://example.org/StructureDefinition/birthsex-extension"
       },
       {
         "id": "Extension.value[x]",
@@ -70,7 +70,7 @@
         "max": "1",
         "binding": {
           "strength": "required",
-          "valueSet": "http://intersystems.com/fhir/chu/toulouse/ValueSet/birthsex-valueset"
+          "valueSet": "http://example.org/ValueSet/birthsex-valueset"
         }
       }
     ]

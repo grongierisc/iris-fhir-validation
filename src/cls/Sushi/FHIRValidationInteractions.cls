@@ -1,4 +1,4 @@
-Class SEMeeting2023.FHIRValidationInteractions Extends (HS.FHIRServer.Storage.Json.Interactions, HS.HC.FHIRSQL.FHIR.Interactions)
+Class Suchi.FHIRValidationInteractions Extends (HS.FHIRServer.Storage.Json.Interactions, HS.HC.FHIRSQL.FHIR.Interactions)
 {
 
 /* NB: After modifying this class, make sure to reset the endpoint using this command:
@@ -6,9 +6,9 @@ Class SEMeeting2023.FHIRValidationInteractions Extends (HS.FHIRServer.Storage.Js
 	do ##class(HS.FHIRServer.Service).InvalidateInstances((##class(HS.FHIRServer.API.InteractionsStrategy).GetStrategyForEndpoint("/fhir-validation")).InstanceKey)  kill ^FSLOG
 
 */
-Parameter ResourceValidatorClass = "SEMeeting2023.FHIRResourceValidator";
+Parameter ResourceValidatorClass = "Suchi.FHIRResourceValidator";
 
-Parameter BatchHandlerClass As %String = "SEMeeting2023.FHIRBundleProcessor";
+Parameter BatchHandlerClass As %String = "Suchi.FHIRBundleProcessor";
 
 Method Update(pResourceObj As %DynamicObject) As %String
 {

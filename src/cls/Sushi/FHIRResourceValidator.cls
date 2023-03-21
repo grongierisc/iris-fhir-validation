@@ -1,4 +1,4 @@
-Class SEMeeting2023.FHIRResourceValidator Extends HS.FHIRServer.Util.ResourceValidator
+Class Suchi.FHIRResourceValidator Extends HS.FHIRServer.Util.ResourceValidator
 {
 
 /// @API
@@ -19,7 +19,7 @@ Method ValidateResource(pResourceObject As %DynamicObject)
 	
 	if $get(%inTransactionFlag, $$$NO) '= $$$YES
 	{
-		do ##class(SEMeeting2023.FHIRValidation).validate(pResourceObject)
+		do ##class(Suchi.FHIRValidation).validate(pResourceObject)
 	}
 }
 

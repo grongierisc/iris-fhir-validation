@@ -1,6 +1,6 @@
 Include HS.FHIRServer
 
-Class SEMeeting2023.FHIRValidation [ Abstract ]
+Class Suchi.FHIRValidation [ Abstract ]
 {
 
 Parameter SkipIfNoProfileKEY = 1;
@@ -9,7 +9,7 @@ Parameter JavaGatewayPortKEY = 53272;
 
 Parameter JavaGatewayServerKEY = "localhost";
 
-Parameter IGListKEY = "/irisdev/app/src/fsh/CHUToulouseIG/fsh-generated/resources/";
+Parameter IGListKEY = "/irisdev/app/src/fsh/ExampleIG/fsh-generated/resources/";
 
 Parameter TerminologyServerKEY = "https://tx.fhir.org/r4/";
 
@@ -55,7 +55,7 @@ ClassMethod validate(theResource As %DynamicObject)
 	{
 		Do ##class(%Library.Device).ReDirectIO(0)
 		$$$FSLog("About to call Java validator...")
-		set validator = gw.new("SEMeeting2023.JavaValidatorFacade")
+		set validator = gw.new("Suchi.JavaValidatorFacade")
 
 		set json = validator.validate( igList, file.Filename, terminologyServer, profileToValidateAgainst)
 		Do ##class(%Library.Device).ReDirectIO(1)
@@ -66,9 +66,6 @@ ClassMethod validate(theResource As %DynamicObject)
 		if (sc = "") set sc = ex.AsStatus()
 	}
 	kill file  // the file gets deleted here as we've never %Save()d it!
-
-	
-
 
 	// assemble error status in case of any severity=error issues
 	#dim operationOutcome As %DynamicObject = {}.%FromJSON(json)

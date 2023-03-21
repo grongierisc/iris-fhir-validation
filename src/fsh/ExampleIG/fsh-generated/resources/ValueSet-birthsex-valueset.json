@@ -6,7 +6,7 @@
   "title": "Birth Sex",
   "description": "Codes for assigning sex at birth",
   "version": "0.1.0",
-  "url": "http://intersystems.com/fhir/chu/toulouse/ValueSet/birthsex-valueset",
+  "url": "http://example.org/ValueSet/birthsex-valueset",
   "compose": {
     "include": [
       {

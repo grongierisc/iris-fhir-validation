@@ -3,7 +3,7 @@
   "id": "BundleExample",
   "meta": {
     "profile": [
-      "http://intersystems.com/fhir/chu/toulouse/StructureDefinition/MyBundle"
+      "http://example.org/StructureDefinition/MyBundle"
     ]
   },
   "type": "transaction",
@@ -15,12 +15,12 @@
         "id": "PatientExample",
         "meta": {
           "profile": [
-            "http://intersystems.com/fhir/chu/toulouse/StructureDefinition/MyPatient"
+            "http://example.org/StructureDefinition/MyPatient"
           ]
         },
         "extension": [
           {
-            "url": "http://intersystems.com/fhir/chu/toulouse/StructureDefinition/birthsex-extension",
+            "url": "http://example.org/StructureDefinition/birthsex-extension",
             "valueCode": "F"
           }
         ],

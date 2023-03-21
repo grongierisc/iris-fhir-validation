@@ -1,23 +1,23 @@
 {
   "resourceType": "ImplementationGuide",
-  "id": "chu.toulouse",
-  "url": "http://intersystems.com/fhir/chu/toulouse/ImplementationGuide/chu.toulouse",
+  "id": "fhir.example",
+  "url": "http://example.org/ImplementationGuide/fhir.example",
   "version": "0.1.0",
-  "name": "CHUToulouseIG",
+  "name": "ExampleIG",
   "status": "draft",
-  "publisher": "InterSystems",
+  "publisher": "Example Publisher",
   "contact": [
     {
-      "name": "InterSystems",
+      "name": "Example Publisher",
       "telecom": [
         {
           "system": "url",
-          "value": "http://www.intersystems.com"
+          "value": "http://example.org/example-publisher"
         }
       ]
     }
   ],
-  "packageId": "chu.toulouse",
+  "packageId": "fhir.example",
   "fhirVersion": [
     "4.0.1"
   ],
@@ -61,7 +61,7 @@
         },
         "name": "BundleExample",
         "description": "An example of a bundle",
-        "exampleCanonical": "http://intersystems.com/fhir/chu/toulouse/StructureDefinition/MyBundle"
+        "exampleCanonical": "http://example.org/StructureDefinition/MyBundle"
       },
       {
         "reference": {
@@ -69,7 +69,7 @@
         },
         "name": "PatientExample",
         "description": "An example of a patient",
-        "exampleCanonical": "http://intersystems.com/fhir/chu/toulouse/StructureDefinition/MyPatient"
+        "exampleCanonical": "http://example.org/StructureDefinition/MyPatient"
       }
     ],
     "page": {

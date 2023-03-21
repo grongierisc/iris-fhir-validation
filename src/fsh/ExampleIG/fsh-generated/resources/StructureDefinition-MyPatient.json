@@ -11,7 +11,7 @@
       "valueCode": "patient"
     }
   ],
-  "url": "http://intersystems.com/fhir/chu/toulouse/StructureDefinition/MyPatient",
+  "url": "http://example.org/StructureDefinition/MyPatient",
   "version": "0.1.0",
   "name": "MyPatient",
   "status": "active",
@@ -75,7 +75,7 @@
           {
             "code": "Extension",
             "profile": [
-              "http://intersystems.com/fhir/chu/toulouse/StructureDefinition/birthsex-extension"
+              "http://example.org/StructureDefinition/birthsex-extension"
             ]
           }
         ]
