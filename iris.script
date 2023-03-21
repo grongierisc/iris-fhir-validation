@@ -43,9 +43,5 @@
     set config.MaxSearchResults = 100000
     do strategy.SaveServiceConfigData(config)
 
-    do $SYSTEM.SQL.Execute("LOAD DATA FROM FILE '/irisdev/app/data/Location.csv' INTO Demo_External.Location")
-
-    zw ##class(Demo.AtScale.DateFact).Populate()
-
     do ##class(HS.FHIRServer.Tools.DataLoader).SubmitResourceFiles("/irisdev/app/data/fhir", "FHIRSERVER", "/fhir/r4")
     halt

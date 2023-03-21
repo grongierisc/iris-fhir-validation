@@ -18,7 +18,8 @@ Parameter PatientProfileKEY;
 ClassMethod validate(theResource As %DynamicObject)
 {
 	#dim skipIfNoProfile As %String = ..#SkipIfNoProfileKEY
-	
+	#dim errorStatus As %Status = $$$OK
+
 	#dim noProfile As %Boolean = ('theResource.%IsDefined("meta") || 'theResource.meta.%IsDefined("profile") || (theResource.meta.profile.%Size() = 0))
 	
 	// skipIfNoProfile: only validate if profile is specified
@@ -55,22 +56,26 @@ ClassMethod validate(theResource As %DynamicObject)
 	{
 		Do ##class(%Library.Device).ReDirectIO(0)
 		$$$FSLog("About to call Java validator...")
+
 		set validator = gw.new("Suchi.JavaValidatorFacade")
 
 		set json = validator.validate( igList, file.Filename, terminologyServer, profileToValidateAgainst)
-		Do ##class(%Library.Device).ReDirectIO(1)
 	}
 	catch ex
 	{
 		set sc = $get(%objlasterror)  // exception with Java stack here!
 		if (sc = "") set sc = ex.AsStatus()
+		$$$FHIRAddError(errorStatus, sc)
 	}
+
+	Do ##class(%Library.Device).ReDirectIO(1)
 	kill file  // the file gets deleted here as we've never %Save()d it!
+
+	$$$ThrowOnError(errorStatus)
 
 	// assemble error status in case of any severity=error issues
 	#dim operationOutcome As %DynamicObject = {}.%FromJSON(json)
 
-	#dim errorStatus As %Status = $$$OK
 	#dim iter As %Iterator.Object = operationOutcome.issue.%GetIterator()
 	#dim issue As %DynamicObject
 	while iter.%GetNext(.key, .issue) 
