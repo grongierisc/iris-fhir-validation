@@ -130,3 +130,9 @@ dmypy.json
 
 #macos
 .DS_Store
+
+# python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
