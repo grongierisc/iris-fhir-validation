@@ -2,10 +2,15 @@
 
 ## Example of request
 
+```http
+GET http://localhost:8083/fhir/custom/metadata
+Accept: application/json+fhir
+```
+
 ### Get a patient from EAI
 
 ```http
-GET http://localhost:8083/fhir/r4/Patient?name=elbert
+GET http://localhost:8083/fhir/custom/Patient?name=elbert
 Content-Type: application/json+fhir
 Accept: application/json+fhir
 ```

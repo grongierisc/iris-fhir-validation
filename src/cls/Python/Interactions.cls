@@ -1,36 +1,5 @@
-Class Python.Interactions Extends HS.FHIRServer.Storage.Json.Interactions
+Class Python.Interactions Extends (HS.FHIRServer.Storage.Json.Interactions, Python.Helper)
 {
-
-// reload an endpoint's interactions from a python class
-
-// do ##class(HS.FHIRServer.ServiceAdmin).DetachEndpointFromInstance("/fhir/custom")
-
-Property PythonClass As %SYS.Python;
-
-Property PythonModule As %String;
-
-Property PythonPath As %String;
-
-Property PythonClassname As %String;
-
-ClassMethod SetPythonPath(pClasspaths)
-{
-    set sys = ##class(%SYS.Python).Import("sys")
-    do sys.path.append(pClasspaths)
-}
-
-ClassMethod GetPythonInstance(
-	pModule,
-	pRemoteClassname) As %SYS.Python
-{
-    set importlib = ##class(%SYS.Python).Import("importlib")
-    set builtins = ##class(%SYS.Python).Import("builtins")
-    set module = importlib."import_module"(pModule)
-	do importlib."reload"(module)
-    set module = importlib."import_module"(pModule)
-    set class = builtins.getattr(module, pRemoteClassname)
-    return class."__new__"(class)
-}
 
 Method %OnNew(pStrategy As HS.FHIRServer.Storage.Json.InteractionsStrategy) As %Status
 {

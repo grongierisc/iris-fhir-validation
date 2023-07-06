@@ -17,7 +17,7 @@ class Interaction(object):
         param timeout: the timeout in seconds
         return: None
         """
-        pass
+        
 
     @abc.abstractmethod
     def on_after_request(self,
@@ -32,7 +32,7 @@ class Interaction(object):
         param fhir_response: the fhir response object iris.FHIRServer.API.Data.Response
         return: None
         """
-        pass
+        
 
     @abc.abstractmethod
     def post_process_read(self,
@@ -42,7 +42,7 @@ class Interaction(object):
         param fhir_object: the fhir object
         return: True the resource should be returned to the client, False otherwise
         """
-        pass
+        
 
     @abc.abstractmethod
     def post_process_search(self,
@@ -54,4 +54,4 @@ class Interaction(object):
         param resource_type: the resource type
         return: None
         """
-        pass
+        
