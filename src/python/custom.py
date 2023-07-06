@@ -1,8 +1,5 @@
 from FhirInteraction import Interaction
 
-import iris
-
-
 class CustomInteraction(Interaction):
 
     def on_before_request(self, fhir_service, fhir_request, timeout):
