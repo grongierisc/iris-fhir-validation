@@ -14,7 +14,7 @@ Method GetMetadataResource() As %DynamicObject
 	set ..PythonModule = $system.Util.GetEnviron("STRATEGY_MODULE")
 
 	if (..PythonPath = "") || (..PythonClassname = "") || (..PythonModule = "") {
-		quit ##super()
+		#; quit ##super()
 		set ..PythonPath = "/irisdev/app/src/python/"
 		set ..PythonClassname = "CustomStrategy"
 		set ..PythonModule = "custom"
