@@ -3,7 +3,7 @@ Include HS.FHIRServer
 Class Suchi.FHIRValidation [ Abstract ]
 {
 
-Parameter SkipIfNoProfileKEY = 1;
+Parameter SkipIfNoProfileKEY = 0;
 
 Parameter JavaGatewayPortKEY = 53272;
 

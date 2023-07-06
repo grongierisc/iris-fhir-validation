@@ -337,7 +337,7 @@ Prefer: return=representation
 ### validate patient
 
 ```http
-POST http://localhost:8083/fhir/r4/Patient/
+POST http://localhost:8083/fhir/custom/Patient/
 Content-Type: application/json+fhir
 Accept: application/json+fhir
 Prefer: return=representation
