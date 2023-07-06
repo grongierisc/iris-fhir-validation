@@ -8,6 +8,7 @@ class Interaction(object):
     def on_before_request(self, 
                           fhir_service:'iris.HS.FHIRServer.API.Service',
                           fhir_request:'iris.FHIRServer.API.Data.Request',
+                          body:dict,
                           timeout:int):
         """
         on_before_request is called before the request is sent to the server.
@@ -22,7 +23,8 @@ class Interaction(object):
     def on_after_request(self,
                          fhir_service:'iris.HS.FHIRServer.API.Service',
                          fhir_request:'iris.FHIRServer.API.Data.Request',
-                         fhir_response:'iris.FHIRServer.API.Data.Response'):
+                         fhir_response:'iris.FHIRServer.API.Data.Response',
+                         body:dict):
         """
         on_after_request is called after the request is sent to the server.
         param fhir_service: the fhir service object iris.HS.FHIRServer.API.Service

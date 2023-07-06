@@ -66,7 +66,12 @@ Method OnBeforeRequest(
 {
 	// OnBeforeRequest is called before each request is processed.
 	if $ISOBJECT(..PythonClass) {
-		do ..PythonClass."on_before_request"(pFHIRService, pFHIRRequest, pTimeout)
+		set body = ##class(%SYS.Python).None()
+		if pFHIRRequest.Json '= "" {
+			set jsonLib = ##class(%SYS.Python).Import("json")
+			set body = jsonLib.loads(pFHIRRequest.Json.%ToJSON())
+		}
+		do ..PythonClass."on_before_request"(pFHIRService, pFHIRRequest, body, pTimeout)
 	}
 }
 
@@ -77,7 +82,12 @@ Method OnAfterRequest(
 {
 	// OnAfterRequest is called after each request is processed.
 	if $ISOBJECT(..PythonClass) {
-		do ..PythonClass."on_after_request"(pFHIRService, pFHIRRequest, pFHIRResponse)
+		set body = ##class(%SYS.Python).None()
+		if pFHIRResponse.Json '= "" {
+			set jsonLib = ##class(%SYS.Python).Import("json")
+			set body = jsonLib.loads(pFHIRResponse.Json.%ToJSON())
+		}
+		do ..PythonClass."on_after_request"(pFHIRService, pFHIRRequest, pFHIRResponse, body)
 	}
 }
 
