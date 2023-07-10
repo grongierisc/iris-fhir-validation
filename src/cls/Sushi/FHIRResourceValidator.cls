@@ -17,7 +17,7 @@ Method ValidateResource(pResourceObject As %DynamicObject)
 	// it's FHIRBundleValidator that takes care of validating Bundle entries
 	//   so here we skip validation if this is the case
 	
-	if $get(%inTransactionFlag, $$$NO) '= $$$YES
+	if ($get(%inTransactionFlag, $$$NO) '= $$$YES) && (pResourceObject.resourceType '= "CapabilityStatement")
 	{
 		do ##class(Suchi.FHIRValidation).validate(pResourceObject)
 	}

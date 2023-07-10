@@ -1,4 +1,0 @@
-Class User.SQLvar
-{
-
-}

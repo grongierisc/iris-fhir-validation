@@ -1,0 +1,37 @@
+{
+    "resourceType": "Patient",
+    "id": "PatientExample",
+    "meta": {
+      "profile": [
+        "http://example.org/StructureDefinition/MyPatient"
+      ]
+    },
+    "extension": [
+      {
+        "url": "http://example.org/StructureDefinition/birthsex-extension",
+        "valueCode": "F"
+      },
+      {
+        "url": "http://isc.demo/fhir/StructureDefinition/patient-FavoriteColor-extension",
+        "valueCode" : "Blue"
+      }
+    ],
+    "name": [
+      {
+        "given": [
+          "Janette"
+        ],
+        "family": "Smith"
+      }
+    ],
+    "maritalStatus": {
+      "coding": [
+        {
+          "code": "M",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+          "display": "Married"
+        }
+      ]
+    }
+  }
+  
