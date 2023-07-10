@@ -63,8 +63,7 @@ ClassMethod validate(theResource As %DynamicObject)
 	}
 	catch ex
 	{
-		set sc = $get(%objlasterror)  // exception with Java stack here!
-		if (sc = "") set sc = ex.AsStatus()
+		set sc = ex.AsStatus()
 		$$$FHIRAddError(errorStatus, sc)
 	}
 
