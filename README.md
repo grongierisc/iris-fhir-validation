@@ -55,7 +55,7 @@ Prefer: return=representation
   "extension": [
     {
       "url": "http://example.org/StructureDefinition/birthsex-extension",
-      "valueCode": "ASKU"
+      "valueCode": "M"
     },
     {
       "url": "http://isc.demo/fhir/StructureDefinition/patient-FavoriteColor-extension",

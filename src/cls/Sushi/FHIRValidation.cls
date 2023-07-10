@@ -3,7 +3,7 @@ Include HS.FHIRServer
 Class Suchi.FHIRValidation [ Abstract ]
 {
 
-Parameter SkipIfNoProfileKEY = 0;
+Parameter SkipIfNoProfileKEY = 1;
 
 Parameter JavaGatewayPortKEY = 53272;
 
@@ -15,9 +15,30 @@ Parameter TerminologyServerKEY = "https://tx.fhir.org/r4/";
 
 Parameter PatientProfileKEY;
 
+ClassMethod readConfig(path) As %DynamicObject
+{
+	set moduleJson = ##class(%SYS.Python).Import("json")
+	set moduleConfig = ##class(%SYS.Python).Import("configparser")
+
+	set config = moduleConfig.ConfigParser()
+	do config.read(path)
+
+	set configJson = moduleJson.dumps(config."_sections")
+
+	return {}.%FromJSON(configJson)
+}
+
 ClassMethod validate(theResource As %DynamicObject)
 {
+	// read configuration
+	#dim config As %DynamicObject = ..readConfig("/irisdev/app/profile.ini")
+
 	#dim skipIfNoProfile As %String = ..#SkipIfNoProfileKEY
+	if config.%IsDefined("Config") && config.Config.%IsDefined("skipifnoprofilekey")
+	{
+		set skipIfNoProfile = config.Config.skipifnoprofilekey
+	}
+
 	#dim errorStatus As %Status = $$$OK
 
 	#dim noProfile As %Boolean = ('theResource.%IsDefined("meta") || 'theResource.meta.%IsDefined("profile") || (theResource.meta.profile.%Size() = 0))
@@ -31,8 +52,20 @@ ClassMethod validate(theResource As %DynamicObject)
 	#dim javaGatewayPort As %String = ..#JavaGatewayPortKEY
 	#dim javaGatewayServer As %String = ..#JavaGatewayServerKEY
 	#dim igList As %String = ..#IGListKEY
+	if config.%IsDefined("Config") && config.Config.%IsDefined("iglist")
+	{
+		set igList = config.Config.iglistkey
+	}
 	#dim terminologyServer As %String = ..#TerminologyServerKEY
+	if config.%IsDefined("Config") && config.Config.%IsDefined("terminologyserverkey")
+	{
+		set terminologyServer = config.Config.terminologyserverkey
+	}
 	#dim patientProfile As %String = ..#PatientProfileKEY
+	if config.%IsDefined("Config") && config.Config.%IsDefined("patientprofilekey")
+	{
+		set patientProfile = config.Config.patientprofilekey
+	}
 	
 	#dim profileToValidateAgainst As %String = ""
 	if noProfile 
