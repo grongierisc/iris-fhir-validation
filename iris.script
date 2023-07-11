@@ -53,24 +53,20 @@
     set config.MaxSearchResults = 100000
     do strategy.SaveServiceConfigData(config)
 
-    // Load npm packages
-    do ##class(HS.FHIRMeta.Load.NpmLoader).importPackages($lb("/irisdev/app/data/hl7.fhir.fr.core",
-                                                              "/irisdev/app/data/hl7.terminology.r4",
-                                                              "/irisdev/app/data/ans.annuaire.fhir.r4",
-                                                              "/irisdev/app/data/ans.fhir.fr.ror"))
-
     // Install Package for ROR Service
     set namespace="FHIRSERVER"
     Set appKey = "/fhir/ror"
     Set strategyClass = "HS.FHIRServer.Storage.Json.InteractionsStrategy"
-    set metadataPackages = $lb("hl7.fhir.r4.core@4.0.1","ans.fhir.fr.ror@0.1.1")
+    set metadataPackages = $lb("hl7.fhir.r4.core@4.0.1")
 
     Do ##class(HS.FHIRServer.Installer).InstallInstance(appKey, strategyClass, metadataPackages)
 
-    set strategy = ##class(HS.FHIRServer.API.InteractionsStrategy).GetStrategyForEndpoint("/fhir/ror")
-    set interactions = strategy.NewInteractionsInstance()
-    set newCapabilityStatement = {}.%FromJSONFile("/irisdev/app/data/ans.fhir.fr.ror/CapabilityStatement-ror-serveur.json")
-    do interactions.SetMetadata(newCapabilityStatement)
+    // Configure FHIR Service instance to accept unauthenticated requests
+    set strategy = ##class(HS.FHIRServer.API.InteractionsStrategy).GetStrategyForEndpoint(appKey)
+    set config = strategy.GetServiceConfigData()
+    set config.DebugMode = 6
+    set config.MaxSearchResults = 100000
+    do strategy.SaveServiceConfigData(config)
 
     // Load FHIR data
     do ##class(HS.FHIRServer.Tools.DataLoader).SubmitResourceFiles("/irisdev/app/data/fhir", "FHIRSERVER", "/fhir/r4")

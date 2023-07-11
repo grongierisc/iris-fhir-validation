@@ -451,9 +451,33 @@ Accept: application/json+fhir
 
 To demonstrate the capabilities of the FHIR server, we have created a ROR server from the implementation guide [ROR](https://interop.esante.gouv.fr/ig/fhir/ror/)
 
-The ROR server is available at the endpoint `/fhir/ror`.
+The ROR server will be available at the endpoint `/fhir/ror`.
 
-Get the CapabilityStatement of the ROR server
+For now, it's raw R4 FHIR Server, so we need to add the package `ans.fhir.fr.ror` to the FHIR server and update the CapabilityStatement.
+
+### Import the package
+
+```bash
+/usr/irissys/bin/irispython /irisdev/app/src/python/profile_helper.py --imports /irisdev/app/data/hl7.fhir.fr.core /irisdev/app/data/hl7.terminology.r4 /irisdev/app/data/ans.annuaire.fhir.r4 /irisdev/app/data/ans.fhir.fr.ror
+```
+
+### Add the package to the endpoint
+
+```bash
+/usr/irissys/bin/irispython /irisdev/app/src/python/profile_helper.py --add /fhir/ror ans.fhir.fr.ror@0.1.1
+```
+
+### Index the resources of the package
+
+```bash
+/usr/irissys/bin/irispython /irisdev/app/src/python/profile_helper.py --index /fhir/ror
+```
+
+### Update the CapabilityStatement
+
+```bash
+/usr/irissys/bin/irispython /irisdev/app/src/python/profile_helper.py --update-capability-statement /fhir/ror /irisdev/app/data/ans.fhir.fr.ror/CapabilityStatement-ror-serveur.json
+```
 
 ```http
 GET http://localhost:8083/fhir/ror/metadata

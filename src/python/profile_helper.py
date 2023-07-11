@@ -42,6 +42,12 @@ def list_package_of_endpoint(endpoint_name):
 def index_endpoint(endpoint_name):
     iris.cls('HS.FHIRServer.Storage.Json.Tools.Index').upgradeServiceMetadata(endpoint_name)
 
+def update_capability_statement(endpoint_name,json_file):
+    strategy = iris.cls('HS.FHIRServer.API.InteractionsStrategy').GetStrategyForEndpoint("/fhir/ror")
+    interactions = strategy.NewInteractionsInstance()
+    newCapabilityStatement = iris.cls('%Library.DynamicObject')._FromJSONFile("/irisdev/app/data/ans.fhir.fr.ror/CapabilityStatement-ror-serveur.json")
+    interactions.SetMetadata(newCapabilityStatement)
+
 if __name__ == '__main__':
     # create a simple command line interface
     import argparse
@@ -52,6 +58,7 @@ if __name__ == '__main__':
     parser.add_argument('--add', nargs='+', help='Add packages to endpoint, first argument is endpoint name, the rest are packages')
     parser.add_argument('--list-endpoint', action='store_true', help='List packages of endpoint')
     parser.add_argument('--index', nargs='+', help='Index endpoint')
+    parser.add_argument('--update-capability-statement', nargs='+', help='Update capability statement of endpoint')
 
     args = parser.parse_args()
 
@@ -69,6 +76,8 @@ if __name__ == '__main__':
     elif args.index:
         for endpoint in args.index:
             index_endpoint(endpoint)
+    elif args.update_capability_statement:
+        update_capability_statement(args.update_capability_statement[0],args.update_capability_statement[1])
     else:
         parser.print_help()
 
