@@ -1,0 +1,12 @@
+{
+  "name": "hl7.fhir.fr.core",
+  "version": "1.1.0",
+  "description": "The FR Core Implementation Guide is based on FHIR Version R4 and defines the minimum set of constraints on the FHIR resources to create the FR Core Profiles. It also defines the minimum set of FHIR RESTful interactions for each of the FR Core Profiles to access patient data. By establishing the “floor” of standards to promote interoperability and adoption through common implementation, it allows for further standards development evolution for specific uses cases.\r\n\r\n",
+  "author": "Yohann Poiron",
+  "fhirVersions": [
+    "4.0.1"
+  ],
+  "dependencies": {
+    "hl7.fhir.r4.core": "4.0.1"
+  }
+}
