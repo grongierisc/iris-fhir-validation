@@ -32,6 +32,7 @@ def add_package_to_endpoint(endpoint_name,packages_names):
     for package_name in packages_names:
         list_package.append(package_name)
     iris.cls('HS.FHIRServer.Installer').AddPackagesToInstance(instance_key, list_package.to_bytes())
+    print(f"\nPackages added to endpoint")
 
 def list_package_of_endpoint(endpoint_name):
     # get the endpoint

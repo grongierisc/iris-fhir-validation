@@ -336,6 +336,12 @@ Login : SuperUser/SYS
 
 WIP : https://docs.intersystems.com/irisforhealth20231/csp/docbook/DocBook.UI.Page.cls?KEY=HXFHIR_server_customize#HXFHIR_server_customize_profile_api
 
+>>> import profile_helper
+>>> profile_helper.import_package(['/irisdev/app/data/hl7.fhir.fr.core'])
+Saving hl7.fhir.fr.core@1.1.0
+Load Resources: hl7.fhir.fr.core@1.1.0
+>>> profile_helper.add_package_to_endpoint('/fhir/r4',['hl7.fhir.fr.core@1.1.0'])
+
 #### Check the CapabilityStatement
 
 ```http
