@@ -334,13 +334,44 @@ Login : SuperUser/SYS
 
 #### API
 
-WIP : https://docs.intersystems.com/irisforhealth20231/csp/docbook/DocBook.UI.Page.cls?KEY=HXFHIR_server_customize#HXFHIR_server_customize_profile_api
+You can use the python script `profile_helper.py` to add a package to the FHIR server.
 
+⚠️ **Warning** : the shell must be in the container.
+
+```bash
+/usr/irissys/bin/irispython /irisdev/app/src/python/profile_helper.py
+```
+or
+
+```python
 >>> import profile_helper
->>> profile_helper.import_package(['/irisdev/app/data/hl7.fhir.fr.core'])
+>>> profile_helper.import_package(['/irisdev/app/data/ror'])
 Saving hl7.fhir.fr.core@1.1.0
 Load Resources: hl7.fhir.fr.core@1.1.0
->>> profile_helper.add_package_to_endpoint('/fhir/r4',['hl7.fhir.fr.core@1.1.0'])
+>>> profile_helper.add_package_to_endpoint('/fhir/ror',['ans.fhir.fr.ror@0.1.1'])
+```
+
+##### Example
+
+Same example as above but with the api.
+
+Import the package `isc-demo-package-yee` in the FHIR server.
+
+```bash
+/usr/irissys/bin/irispython /irisdev/app/src/python/profile_helper.py --imports /irisdev/app/data/isc-demo-fhir-package
+```
+
+Add the package `isc-demo-package-yee` to the endpoint `/fhir/r4`.
+
+```bash
+/usr/irissys/bin/irispython /irisdev/app/src/python/profile_helper.py --add /fhir/r4 isc-demo-package-yee@0.0.1
+```
+
+Index the resources of the package `isc-demo-package-yee` in the endpoint `/fhir/r4`.
+
+```bash
+/usr/irissys/bin/irispython /irisdev/app/src/python/profile_helper.py --index /fhir/r4
+```
 
 #### Check the CapabilityStatement
 

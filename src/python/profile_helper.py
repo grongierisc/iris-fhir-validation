@@ -41,3 +41,35 @@ def list_package_of_endpoint(endpoint_name):
 
 def index_endpoint(endpoint_name):
     iris.cls('HS.FHIRServer.Storage.Json.Tools.Index').upgradeServiceMetadata(endpoint_name)
+
+if __name__ == '__main__':
+    # create a simple command line interface
+    import argparse
+    parser = argparse.ArgumentParser(description='FHIR Package Manager')
+    parser.add_argument('--list', action='store_true', help='List all packages')
+    parser.add_argument('--imports', nargs='+', help='Import packages')
+    parser.add_argument('--delete', nargs='+', help='Delete packages')
+    parser.add_argument('--add', nargs='+', help='Add packages to endpoint, first argument is endpoint name, the rest are packages')
+    parser.add_argument('--list-endpoint', action='store_true', help='List packages of endpoint')
+    parser.add_argument('--index', nargs='+', help='Index endpoint')
+
+    args = parser.parse_args()
+
+    if args.list:
+        list_of_packages()
+    elif args.imports:
+        import_package(args.imports)
+    elif args.delete:
+        for package in args.delete:
+            delete_package(package)
+    elif args.add:
+        add_package_to_endpoint(args.add[0], args.add[1:])
+    elif args.list_endpoint:
+        list_package_of_endpoint(args.list_endpoint)
+    elif args.index:
+        for endpoint in args.index:
+            index_endpoint(endpoint)
+    else:
+        parser.print_help()
+
+
