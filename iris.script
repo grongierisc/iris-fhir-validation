@@ -74,4 +74,5 @@
 
     // Load FHIR data
     do ##class(HS.FHIRServer.Tools.DataLoader).SubmitResourceFiles("/irisdev/app/data/fhir", "FHIRSERVER", "/fhir/r4")
+
     halt

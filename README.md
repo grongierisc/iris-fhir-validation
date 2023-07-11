@@ -446,3 +446,53 @@ GET http://localhost:8083/fhir/r4/Patient?FavoriteColor=blue
 Content-Type: application/json+fhir
 Accept: application/json+fhir
 ```
+
+## Bonus ROR Server
+
+To demonstrate the capabilities of the FHIR server, we have created a ROR server from the implementation guide [ROR](https://interop.esante.gouv.fr/ig/fhir/ror/)
+
+The ROR server is available at the endpoint `/fhir/ror`.
+
+Get the CapabilityStatement of the ROR server
+
+```http
+GET http://localhost:8083/fhir/ror/metadata
+Accept: application/json+fhir
+```
+
+Try to get a Patient with the ROR server
+
+```http
+GET http://localhost:8083/fhir/ror/Patient/1
+Accept: application/json+fhir
+Authorization: Basic U3VwZXJVc2VyOlNZUw==
+```
+
+It fails because of the capability statement of the ROR server.
+
+```json
+{
+  "resourceType": "OperationOutcome",
+  "issue": [
+    {
+      "severity": "error",
+      "code": "not-supported",
+      "diagnostics": "<HSFHIRErr>ResourceNotSupported",
+      "details": {
+        "text": "Resource type 'Patient' is not supported."
+      }
+    }
+  ]
+}
+```
+
+Get a location
+
+```http
+GET http://localhost:8083/fhir/ror/Location
+Content-Type: application/json+fhir
+Accept: application/json+fhir
+Authorization: Basic U3VwZXJVc2VyOlNZUw==
+```
+
+Nothing for now because the IG doesn't provide any example yet.
