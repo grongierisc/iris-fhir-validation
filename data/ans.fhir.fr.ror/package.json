@@ -1,0 +1,30 @@
+{
+  "name" : "ans.fhir.fr.ror",
+  "version" : "0.1.1",
+  "tools-version" : 3,
+  "type" : "IG",
+  "date" : "20230602120211",
+  "license" : "CC0-1.0",
+  "canonical" : "https://interop.esante.gouv.fr/ig/fhir/ror",
+  "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/0.1.1",
+  "title" : "Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social",
+  "description" : "Ressources de conformité basées sur le modèle d'exposition 3.0 du ROR (built Fri, Jun 2, 2023 12:02+0200+02:00)",
+  "fhirVersions" : ["4.0.1"],
+  "dependencies" : {
+    "hl7.fhir.r4.core" : "4.0.1",
+    "hl7.terminology.r4" : "5.0.0",
+    "ans.annuaire.fhir.r4" : "0.2.0",
+    "hl7.fhir.fr.core" : "1.1.0"
+  },
+  "author" : "ANS",
+  "maintainers" : [
+    {
+      "name" : "ANS",
+      "url" : "https://esante.gouv.fr"
+    }
+  ],
+  "directories" : {
+    "lib" : "package",
+    "example" : "example"
+  }
+}

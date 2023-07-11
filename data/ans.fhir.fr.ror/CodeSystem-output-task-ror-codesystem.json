@@ -1,0 +1,42 @@
+{
+    "resourceType": "CodeSystem",
+    "id": "output-task-ror-codesystem",
+    "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system <code>https://interop.esante.gouv.fr/ig/fhir/ror/CodeSystem/output-task-ror-codesystem</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">newValue<a name=\"output-task-ror-codesystem-newValue\"> </a></td><td>Nouvelle valeur renseignée</td></tr><tr><td style=\"white-space:nowrap\">identifierAnalyst<a name=\"output-task-ror-codesystem-identifierAnalyst\"> </a></td><td>identifiant du destinataire du traitement de la demande</td></tr></table></div>"
+    },
+    "url": "https://interop.esante.gouv.fr/ig/fhir/ror/CodeSystem/output-task-ror-codesystem",
+    "version": "0.1.1",
+    "name": "OutputTaskRORCodeSystem",
+    "status": "active",
+    "date": "2023-06-02T12:02:38+02:00",
+    "publisher": "ANS",
+    "contact": [
+        {
+            "name": "ANS",
+            "telecom": [
+                {
+                    "system": "url",
+                    "value": "https://esante.gouv.fr"
+                }
+            ]
+        }
+    ],
+    "description": "Code System pour la définition des éléments spécifiques de output dans ressource RORTask",
+    "caseSensitive": true,
+    "compositional": false,
+    "content": "complete",
+    "count": 2,
+    "concept": [
+        {
+            "code": "newValue",
+            "display": "newValue",
+            "definition": "Nouvelle valeur renseignée"
+        },
+        {
+            "code": "identifierAnalyst",
+            "display": "identifierAnalyst",
+            "definition": "identifiant du destinataire du traitement de la demande"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "resourceType": "SearchParameter",
+    "id": "ror-sp-additional-bed-type",
+    "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>RORSPAdditionalBedType</h2><p>Parameter <code>additional-bed-type</code>:<code>token</code></p><div><p>Paramètre de recherche pour récupérer les types des lits disponnibles</p>\n</div><table class=\"grid\"><tr><td>Resource</td><td><a href=\"http://hl7.org/fhir/R4/location.html\">Location</a></td></tr><tr><td>Expression</td><td><code>Location.extension.where(url='https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location-supported-capacity').extension(url='additionalBedType').valueCode</code></td></tr><tr><td>Multiples</td><td>The parameter cannot repeat or have multiple values</td></tr></table></div>"
+    },
+    "url": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-additional-bed-type",
+    "version": "0.1.1",
+    "name": "RORSPAdditionalBedType",
+    "status": "active",
+    "date": "2023-06-02T12:02:38+02:00",
+    "publisher": "ANS",
+    "contact": [
+        {
+            "name": "ANS",
+            "telecom": [
+                {
+                    "system": "url",
+                    "value": "https://esante.gouv.fr"
+                }
+            ]
+        }
+    ],
+    "description": "Paramètre de recherche pour récupérer les types des lits disponnibles",
+    "code": "additional-bed-type",
+    "base": [
+        "Location"
+    ],
+    "type": "token",
+    "expression": "Location.extension.where(url='https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location-supported-capacity').extension(url='additionalBedType').valueCode"
+}

@@ -1,0 +1,708 @@
+{
+  "index-version" : 2,
+  "files" : [
+    {
+      "filename" : "ImplementationGuide-ans.fhir.fr.ror.json",
+      "resourceType" : "ImplementationGuide",
+      "id" : "ans.fhir.fr.ror",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror",
+      "version" : "0.1.1"
+    },
+    {
+      "filename" : "StructureDefinition-ror-organization-accessibility-location.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-organization-accessibility-location",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization-accessibility-location",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-contact-telecom-usage.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-contact-telecom-usage",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-contact-telecom-usage",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-organization-financial-help-type.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-organization-financial-help-type",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization-financial-help-type",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-temporality-capacity.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-temporality-capacity",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-temporality-capacity",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "StructureDefinition-ror-organization.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-organization",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization",
+      "version" : "0.1.1",
+      "kind" : "resource",
+      "type" : "Organization"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-capacity-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-capacity-type",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-capacity-type",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-organization-closing-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-organization-closing-type",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-organization-closing-type",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-capacity-closing-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-capacity-closing-type",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-capacity-closing-type",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "StructureDefinition-ror-organization-closing-type.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-organization-closing-type",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization-closing-type",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-organization-nb-permanent-social-help-place.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-organization-nb-permanent-social-help-place",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization-nb-permanent-social-help-place",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-RORPractitionerRoleName.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "RORPractitionerRoleName",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/RORPractitionerRoleName",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-healthcareservice-equipment-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-healthcareservice-equipment-type",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-healthcareservice-equipment-type",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-capacity-status.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-capacity-status",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-capacity-status",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-healthcareservice-psychiatric-sector.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-healthcareservice-psychiatric-sector",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-healthcareservice-psychiatric-sector",
+      "version" : "0.1.1",
+      "type" : "string"
+    },
+    {
+      "filename" : "StructureDefinition-ror-calculated-distance.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-calculated-distance",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-calculated-distance",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-healthcareservice-age-range-low.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-healthcareservice-age-range-low",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-healthcareservice-age-range-low",
+      "version" : "0.1.1",
+      "type" : "quantity"
+    },
+    {
+      "filename" : "ValueSet-code-region-territorial-division.json",
+      "resourceType" : "ValueSet",
+      "id" : "code-region-territorial-division",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/ValueSet/code-region-territorial-division",
+      "version" : "0.1.1"
+    },
+    {
+      "filename" : "StructureDefinition-ror-coordinate-reliability.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-coordinate-reliability",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-coordinate-reliability",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-healthcareservice-sensitive-unit.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-healthcareservice-sensitive-unit",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-healthcareservice-sensitive-unit",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-available-time-effective-opening-closing-date.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-available-time-effective-opening-closing-date",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-available-time-effective-opening-closing-date",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-telecom-usage.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-telecom-usage",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-telecom-usage",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-available-time-type-of-time.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-available-time-type-of-time",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-available-time-type-of-time",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-capacity-update-date.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-capacity-update-date",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-capacity-update-date",
+      "version" : "0.1.1",
+      "type" : "date"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-limit-value.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-limit-value",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-limit-value",
+      "version" : "0.1.1",
+      "type" : "quantity"
+    },
+    {
+      "filename" : "StructureDefinition-ror-organization-creation-date.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-organization-creation-date",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization-creation-date",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-contact-telecom-confidentiality-level.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-contact-telecom-confidentiality-level",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-contact-telecom-confidentiality-level",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-practitionerrole.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-practitionerrole",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-practitionerrole",
+      "version" : "0.1.1",
+      "kind" : "resource",
+      "type" : "PractitionerRole"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-organization-oi-name.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-organization-oi-name",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-organization-oi-name",
+      "version" : "0.1.1",
+      "type" : "string"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-organization-period-end.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-organization-period-end",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-organization-period-end",
+      "version" : "0.1.1",
+      "type" : "date"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-gender-capacity-available.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-gender-capacity-available",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-gender-capacity-available",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "StructureDefinition-ror-confidentiality-level.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-confidentiality-level",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-confidentiality-level",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-nb-capacity.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-nb-capacity",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-nb-capacity",
+      "version" : "0.1.1",
+      "type" : "number"
+    },
+    {
+      "filename" : "StructureDefinition-ror-available-time-number-days-of-week.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-available-time-number-days-of-week",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-available-time-number-days-of-week",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-location.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-location",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location",
+      "version" : "0.1.1",
+      "kind" : "resource",
+      "type" : "Location"
+    },
+    {
+      "filename" : "StructureDefinition-ror-practitionerrole-unit-exercise-mode.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-practitionerrole-unit-exercise-mode",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-practitionerrole-unit-exercise-mode",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-healthcareservice-psychiatric-sector.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-healthcareservice-psychiatric-sector",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-healthcareservice-psychiatric-sector",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-meta-creation-date.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-meta-creation-date",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-meta-creation-date",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-organization-comment.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-organization-comment",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization-comment",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-meta-comment.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-meta-comment",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-meta-comment",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-contact-description.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-contact-description",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-contact-description",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-healthcareservice.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-healthcareservice",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-healthcareservice",
+      "version" : "0.1.1",
+      "kind" : "resource",
+      "type" : "HealthcareService"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-location-near-insee-code.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-location-near-insee-code",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-location-near-insee-code",
+      "version" : "0.1.1",
+      "type" : "special"
+    },
+    {
+      "filename" : "CapabilityStatement-ror-consommateur.json",
+      "resourceType" : "CapabilityStatement",
+      "id" : "ror-consommateur",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/CapabilityStatement/ror-consommateur",
+      "version" : "0.1.1",
+      "kind" : "requirements"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-healthcareservice-intervention-zone.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-healthcareservice-intervention-zone",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-healthcareservice-intervention-zone",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "StructureDefinition-ror-organization-price.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-organization-price",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization-price",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-crisis-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-crisis-type",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-crisis-type",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "StructureDefinition-ror-organization-drop-zone.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-organization-drop-zone",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization-drop-zone",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-territorial-division.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-territorial-division",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-territorial-division",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-telecom-confidentiality-level.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-telecom-confidentiality-level",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-telecom-confidentiality-level",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-commune-cog.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-commune-cog",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-commune-cog",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-organization-drop-zone.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-organization-drop-zone",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-organization-drop-zone",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "CodeSystem-input-task-ror-codesystem.json",
+      "resourceType" : "CodeSystem",
+      "id" : "input-task-ror-codesystem",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/CodeSystem/input-task-ror-codesystem",
+      "version" : "0.1.1",
+      "content" : "complete"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-equipment-feature.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-equipment-feature",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-equipment-feature",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "StructureDefinition-ror-practitioner.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-practitioner",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-practitioner",
+      "version" : "0.1.1",
+      "kind" : "resource",
+      "type" : "Practitioner"
+    },
+    {
+      "filename" : "StructureDefinition-ror-healthcareservice-contact.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-healthcareservice-contact",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-healthcareservice-contact",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-organization-nb-temporary-social-help-place.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-organization-nb-temporary-social-help-place",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization-nb-temporary-social-help-place",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-location-status.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-location-status",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location-status",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-location-equipment.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-location-equipment",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location-equipment",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-contact-function-contact.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-contact-function-contact",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-contact-function-contact",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-healthcareservice-patient-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-healthcareservice-patient-type",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-healthcareservice-patient-type",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "StructureDefinition-ror-location-residential-capacity.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-location-residential-capacity",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location-residential-capacity",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-location-commune-cog.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-location-commune-cog",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-location-commune-cog",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "CodeSystem-output-task-ror-codesystem.json",
+      "resourceType" : "CodeSystem",
+      "id" : "output-task-ror-codesystem",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/CodeSystem/output-task-ror-codesystem",
+      "version" : "0.1.1",
+      "content" : "complete"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-temporary-assignement.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-temporary-assignement",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-temporary-assignement",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "CapabilityStatement-ror-serveur.json",
+      "resourceType" : "CapabilityStatement",
+      "id" : "ror-serveur",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/CapabilityStatement/ror-serveur",
+      "version" : "0.1.1",
+      "kind" : "requirements"
+    },
+    {
+      "filename" : "StructureDefinition-ror-location-supported-capacity.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-location-supported-capacity",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location-supported-capacity",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-contact-confidentiality-level.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-contact-confidentiality-level",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-contact-confidentiality-level",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-organization-reopening-date.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-organization-reopening-date",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization-reopening-date",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-organization-accomodation-family.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-organization-accomodation-family",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization-accomodation-family",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-location-equipment-limit.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-location-equipment-limit",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location-equipment-limit",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-additional-bed-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-additional-bed-type",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-additional-bed-type",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "StructureDefinition-ror-task.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-task",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-task",
+      "version" : "0.1.1",
+      "kind" : "resource",
+      "type" : "Task"
+    },
+    {
+      "filename" : "StructureDefinition-ror-healthcareservice-patient-type.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-healthcareservice-patient-type",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-healthcareservice-patient-type",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-telecom-communication-channel.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-telecom-communication-channel",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-telecom-communication-channel",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-residential-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-residential-type",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-residential-type",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "StructureDefinition-ror-healthcareservice-no-consent-habilitation.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-healthcareservice-no-consent-habilitation",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-healthcareservice-no-consent-habilitation",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-equipment-type.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-equipment-type",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-equipment-type",
+      "version" : "0.1.1",
+      "type" : "token"
+    },
+    {
+      "filename" : "StructureDefinition-ror-organization-level-recours-orsan.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-organization-level-recours-orsan",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization-level-recours-orsan",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "StructureDefinition-ror-organization-additional-name.json",
+      "resourceType" : "StructureDefinition",
+      "id" : "ror-organization-additional-name",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization-additional-name",
+      "version" : "0.1.1",
+      "kind" : "complex-type",
+      "type" : "Extension"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-healthcareservice-age-range-high.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-healthcareservice-age-range-high",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-healthcareservice-age-range-high",
+      "version" : "0.1.1",
+      "type" : "quantity"
+    },
+    {
+      "filename" : "SearchParameter-ror-sp-residential-number.json",
+      "resourceType" : "SearchParameter",
+      "id" : "ror-sp-residential-number",
+      "url" : "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-residential-number",
+      "version" : "0.1.1",
+      "type" : "number"
+    }
+  ]
+}

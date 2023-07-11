@@ -1,0 +1,481 @@
+{
+    "resourceType": "CapabilityStatement",
+    "id": "ror-serveur",
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>RORServeur</h2><div><p>Système ROR National Le Répertoire Opérationnel des Ressources (ROR) est le gisement de données qui décrit les offres de santé au niveau national.</p>\n</div><table><tr><td>Mode</td><td>SERVER</td></tr><tr><td>Description</td><td><div><p>Recherche et consultation des lieux de réalisation de l'offre</p>\n</div></td></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td></td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"PATCH a new resource version (patch interaction)\">Patch</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th></tr><tr><td>Location</td><td><a href=\"https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location\">https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location</a></td><td>y</td><td>y</td><td></td><td></td><td></td></tr><tr><td>HealthcareService</td><td><a href=\"https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-healthcareservice\">https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-healthcareservice</a></td><td>y</td><td>y</td><td></td><td></td><td></td></tr><tr><td>Organization</td><td><a href=\"https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization\">https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization</a></td><td>y</td><td>y</td><td></td><td></td><td></td></tr><tr><td>Practitioner</td><td><a href=\"https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-practitioner\">https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-practitioner</a></td><td>y</td><td>y</td><td></td><td></td><td></td></tr><tr><td>PractitionerRole</td><td><a href=\"https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-practitionerrole\">https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-practitionerrole</a></td><td>y</td><td>y</td><td></td><td></td><td></td></tr><tr><td>Task</td><td><a href=\"https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-task\">https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-task</a></td><td>y</td><td>y</td><td></td><td>y</td><td>y</td></tr></table></div>"
+    },
+    "url": "https://interop.esante.gouv.fr/ig/fhir/ror/CapabilityStatement/ror-serveur",
+    "version": "0.1.1",
+    "name": "RORServeur",
+    "title": "ROR-RORServeur",
+    "status": "active",
+    "experimental": false,
+    "date": "2023-01-12T14:27:51+01:00",
+    "publisher": "ANS",
+    "contact": [
+        {
+            "name": "ANS",
+            "telecom": [
+                {
+                    "system": "url",
+                    "value": "https://esante.gouv.fr"
+                }
+            ]
+        }
+    ],
+    "description": "Système ROR National Le Répertoire Opérationnel des Ressources (ROR) est le gisement de données qui décrit les offres de santé au niveau national.",
+    "kind": "requirements",
+    "fhirVersion": "4.0.1",
+    "format": [
+        "application/fhir+xml",
+        "application/fhir+json"
+    ],
+    "implementationGuide": [
+        "https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror"
+    ],
+    "rest": [
+        {
+            "mode": "server",
+            "documentation": "Recherche et consultation des lieux de réalisation de l'offre",
+            "security": {
+                "cors": false,
+                "description": "L’ANS propose des référentiels dédiés à la politique de sécurité (la PGSSI-S ) et des mécanismes de sécurisation sont définis dans les volets de la couche Transport du Cadre d’Interopérabilité des systèmes d’information de santé (CI-SIS)"
+            },
+            "resource": [
+                {
+                    "type": "Location",
+                    "profile": "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-location",
+                    "interaction": [
+                        {
+                            "code": "search-type"
+                        },
+                        {
+                            "code": "read"
+                        }
+                    ],
+                    "searchParam": [
+                        {
+                            "name": "_id",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Resource-id",
+                            "type": "token",
+                            "documentation": "Identifiant logique de la ressource"
+                        },
+                        {
+                            "name": "_lastUpdated",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+                            "type": "date",
+                            "documentation": "Date de la dernière mise a jour"
+                        },
+                        {
+                            "name": "_tag",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Resource-tag",
+                            "type": "token",
+                            "documentation": "Code de la région de la source de la donnée"
+                        },
+                        {
+                            "name": "type",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Location-type",
+                            "type": "token",
+                            "documentation": "Destination d'usage du lieu"
+                        },
+                        {
+                            "name": "identifier",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Location-identifier",
+                            "type": "token",
+                            "documentation": "Identifiant logique du lieu de réalisation de l'offre"
+                        },
+                        {
+                            "name": "near",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Location-near",
+                            "type": "special",
+                            "documentation": "Lieux proches du lieu de réalisation de l'offre"
+                        },
+                        {
+                            "name": "status",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Location-status",
+                            "type": "token",
+                            "documentation": "Statut de la ressource"
+                        },
+                        {
+                            "name": "address-postalcode",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Location-address-postalcode",
+                            "type": "string",
+                            "documentation": "Code Postal ou code postal spécifique CEDEX"
+                        },
+                        {
+                            "name": "address-city",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Location-address-city",
+                            "type": "string",
+                            "documentation": "Localité ou Libellé du bureau distributeur CEDEX"
+                        },
+                        {
+                            "name": "capacity-status",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-capacity-status",
+                            "type": "token",
+                            "documentation": "Statut de la capacité"
+                        },
+                        {
+                            "name": "nb-capacity",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-nb-capacity",
+                            "type": "number",
+                            "documentation": "Nombre de capacité"
+                        },
+                        {
+                            "name": "additional-bed-type",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-additional-bed-type",
+                            "type": "token",
+                            "documentation": "Types des lits disponnibles"
+                        },
+                        {
+                            "name": "capacity-closing-type",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-capacity-closing-type",
+                            "type": "token",
+                            "documentation": "Type de la fermeture de la capacité"
+                        },
+                        {
+                            "name": "capacity-type",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-capacity-type",
+                            "type": "token",
+                            "documentation": "Nature de la capacité"
+                        },
+                        {
+                            "name": "capacity-update-date",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-capacity-update-date",
+                            "type": "date",
+                            "documentation": "Date à jour de la capacité"
+                        },
+                        {
+                            "name": "crisis-type",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-crisis-type",
+                            "type": "token",
+                            "documentation": "Type de la crise"
+                        },
+                        {
+                            "name": "equipment-type",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-equipment-type",
+                            "type": "token",
+                            "documentation": "Type d'un equipement"
+                        },
+                        {
+                            "name": "equipment-feature",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-equipment-feature",
+                            "type": "token",
+                            "documentation": "Caractéristique d'un equipement"
+                        },
+                        {
+                            "name": "gender-capacity-available",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-gender-capacity-available",
+                            "type": "token",
+                            "documentation": "Genre disponnible de la capacité"
+                        },
+                        {
+                            "name": "limit-value",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-limit-value",
+                            "type": "quantity",
+                            "documentation": "Valeur limite"
+                        },
+                        {
+                            "name": "commune-cog",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-location-commune-cog",
+                            "type": "token",
+                            "documentation": "Code officiel géographique (cog) de la commune dans laquelle le lieu est situé"
+                        },
+                        {
+                            "name": "near-insee-code",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-location-near-insee-code",
+                            "type": "special",
+                            "documentation": "Lieux proches du lieu de réalisation de l'offre via le code COG INSEE"
+                        },
+                        {
+                            "name": "residential-number",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-residential-number",
+                            "type": "number",
+                            "documentation": "Nombre d'habitation"
+                        },
+                        {
+                            "name": "residential-type",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-residential-type",
+                            "type": "token",
+                            "documentation": "Type d'habitation"
+                        },
+                        {
+                            "name": "temporality-capacity",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-temporality-capacity",
+                            "type": "token",
+                            "documentation": "Affectations temporaires"
+                        },
+                        {
+                            "name": "temporary-assignement",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-temporary-assignement",
+                            "type": "token",
+                            "documentation": "Affectations temporaires"
+                        }
+                    ]
+                },
+                {
+                    "type": "HealthcareService",
+                    "profile": "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-healthcareservice",
+                    "interaction": [
+                        {
+                            "code": "search-type"
+                        },
+                        {
+                            "code": "read"
+                        }
+                    ],
+                    "searchParam": [
+                        {
+                            "name": "_id",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Resource-id",
+                            "type": "token",
+                            "documentation": "Identifiant logique de la ressource"
+                        },
+                        {
+                            "name": "_lastUpdated",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+                            "type": "date",
+                            "documentation": "Date de la dernière mise a jour"
+                        },
+                        {
+                            "name": "_tag",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Resource-tag",
+                            "type": "token",
+                            "documentation": "Code de la région de la source de la donnée"
+                        },
+                        {
+                            "name": "location",
+                            "definition": "http://hl7.org/fhir/SearchParameter/HealthcareService-location",
+                            "type": "reference",
+                            "documentation": "Référence à la ressource Location"
+                        },
+                        {
+                            "name": "identifier",
+                            "definition": "http://hl7.org/fhir/SearchParameter/HealthcareService-identifier",
+                            "type": "token",
+                            "documentation": "Identifiant métier de l’offre"
+                        },
+                        {
+                            "name": "name",
+                            "definition": "http://hl7.org/fhir/SearchParameter/HealthcareService-name",
+                            "type": "string",
+                            "documentation": "Dénomination sous laquelle l'offre est identifiée"
+                        },
+                        {
+                            "name": "service-category",
+                            "definition": "http://hl7.org/fhir/SearchParameter/HealthcareService-service-category",
+                            "type": "token",
+                            "documentation": "Type d'offre"
+                        },
+                        {
+                            "name": "service-type",
+                            "definition": "http://hl7.org/fhir/SearchParameter/HealthcareService-service-type",
+                            "type": "token",
+                            "documentation": "Domaine dans lequel s'inscrit l'offre"
+                        },
+                        {
+                            "name": "characteristic",
+                            "definition": "http://hl7.org/fhir/SearchParameter/HealthcareService-characteristic",
+                            "type": "token",
+                            "documentation": "Caractéristiques de l'offre"
+                        },
+                        {
+                            "name": "specialty",
+                            "definition": "http://hl7.org/fhir/SearchParameter/HealthcareService-specialty",
+                            "type": "token",
+                            "documentation": "Ensemble cohérent d’actions et de pratiques mises en œuvre pour répondre aux besoins en Santé de la personne"
+                        },
+                        {
+                            "name": "age-range-high",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-healthcareservice-age-range-high",
+                            "type": "quantity",
+                            "documentation": "Age maximum de la patientèle"
+                        },
+                        {
+                            "name": "age-range-low",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-healthcareservice-age-range-low",
+                            "type": "quantity",
+                            "documentation": "Age minimum de la patientèle"
+                        },
+                        {
+                            "name": "intervention-zone",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-healthcareservice-intervention-zone",
+                            "type": "token",
+                            "documentation": "Zone d'intervention"
+                        },
+                        {
+                            "name": "patient-type",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-healthcareservice-patient-type",
+                            "type": "token",
+                            "documentation": "Public pris en charge"
+                        },
+                        {
+                            "name": "psychiatric-sector",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-healthcareservice-psychiatric-sector",
+                            "type": "string",
+                            "documentation": "Secteur psychiatrique de l'offre opérationnelle"
+                        }
+                    ]
+                },
+                {
+                    "type": "Organization",
+                    "profile": "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-organization",
+                    "interaction": [
+                        {
+                            "code": "search-type"
+                        },
+                        {
+                            "code": "read"
+                        }
+                    ],
+                    "searchParam": [
+                        {
+                            "name": "_id",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Resource-id",
+                            "type": "token",
+                            "documentation": "Identifiant logique de la ressource"
+                        },
+                        {
+                            "name": "_lastUpdated",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+                            "type": "date",
+                            "documentation": "Date de la dernière mise a jour"
+                        },
+                        {
+                            "name": "_tag",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Resource-tag",
+                            "type": "token",
+                            "documentation": "Code de la région de la source de la donnée"
+                        },
+                        {
+                            "name": "identifier",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Organization-identifier",
+                            "type": "token",
+                            "documentation": "Identification nationale de l'Entité Géographique définie dans le CI-SIS"
+                        },
+                        {
+                            "name": "name",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Organization-name",
+                            "type": "string",
+                            "documentation": "Nom de l'organisation interne"
+                        },
+                        {
+                            "name": "type",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Organization-type",
+                            "type": "token",
+                            "documentation": "Cadre réglementaire dans lequel s'exerce l'activité de l'entité géographique"
+                        },
+                        {
+                            "name": "closing-type",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-organization-closing-type",
+                            "type": "token",
+                            "documentation": "Type de fermeture de l'entité géographique, au sens des règles de gestion du SI FINESS"
+                        },
+                        {
+                            "name": "drop-zone",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-organization-drop-zone",
+                            "type": "token",
+                            "documentation": "Indique s'il y a une zone poser sur le site concerné"
+                        },
+                        {
+                            "name": "period-end",
+                            "definition": "https://interop.esante.gouv.fr/ig/fhir/ror/SearchParameter/ror-sp-organization-period-end",
+                            "type": "date",
+                            "documentation": "Date de fermeture de l'entité géographique"
+                        }
+                    ]
+                },
+                {
+                    "type": "Practitioner",
+                    "profile": "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-practitioner",
+                    "interaction": [
+                        {
+                            "code": "search-type"
+                        },
+                        {
+                            "code": "read"
+                        }
+                    ],
+                    "searchParam": [
+                        {
+                            "name": "_id",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Resource-id",
+                            "type": "token",
+                            "documentation": "Identifiant logique de la ressource"
+                        },
+                        {
+                            "name": "_lastUpdated",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+                            "type": "date",
+                            "documentation": "Date de la dernière mise a jour"
+                        },
+                        {
+                            "name": "_tag",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Resource-tag",
+                            "type": "token",
+                            "documentation": "Code de la région de la source de la donnée"
+                        }
+                    ]
+                },
+                {
+                    "type": "PractitionerRole",
+                    "profile": "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-practitionerrole",
+                    "interaction": [
+                        {
+                            "code": "search-type"
+                        },
+                        {
+                            "code": "read"
+                        }
+                    ],
+                    "searchParam": [
+                        {
+                            "name": "_id",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Resource-id",
+                            "type": "token",
+                            "documentation": "Identifiant logique de la ressource"
+                        },
+                        {
+                            "name": "_lastUpdated",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Resource-lastUpdated",
+                            "type": "date",
+                            "documentation": "Date de la dernière mise a jour"
+                        },
+                        {
+                            "name": "_tag",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Resource-tag",
+                            "type": "token",
+                            "documentation": "Code de la région de la source de la donnée"
+                        }
+                    ]
+                },
+                {
+                    "type": "Task",
+                    "profile": "https://interop.esante.gouv.fr/ig/fhir/ror/StructureDefinition/ror-task",
+                    "interaction": [
+                        {
+                            "code": "search-type"
+                        },
+                        {
+                            "code": "read"
+                        },
+                        {
+                            "code": "create"
+                        },
+                        {
+                            "code": "patch"
+                        }
+                    ],
+                    "searchParam": [
+                        {
+                            "name": "_id",
+                            "definition": "http://hl7.org/fhir/SearchParameter/Resource-id",
+                            "type": "token",
+                            "documentation": "Identifiant logique de la ressource"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

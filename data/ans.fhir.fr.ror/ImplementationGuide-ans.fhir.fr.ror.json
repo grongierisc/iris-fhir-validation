@@ -1,0 +1,2115 @@
+{
+    "resourceType": "ImplementationGuide",
+    "id": "ans.fhir.fr.ror",
+    "text": {
+        "status": "extensions",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ROR</h2><p>The official URL for this implementation guide is: </p><pre>https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror</pre><div><p>Ressources de conformité basées sur le modèle d'exposition 3.0 du ROR</p>\n</div></div>"
+    },
+    "url": "https://interop.esante.gouv.fr/ig/fhir/ror/ImplementationGuide/ans.fhir.fr.ror",
+    "version": "0.1.1",
+    "name": "ROR",
+    "title": "Répertoire national de l’Offre et des Ressources en santé et accompagnement médico-social",
+    "status": "active",
+    "date": "2023-06-02T12:02:38+02:00",
+    "publisher": "ANS",
+    "contact": [
+        {
+            "name": "ANS",
+            "telecom": [
+                {
+                    "system": "url",
+                    "value": "https://esante.gouv.fr"
+                }
+            ]
+        }
+    ],
+    "description": "Ressources de conformité basées sur le modèle d'exposition 3.0 du ROR",
+    "packageId": "ans.fhir.fr.ror",
+    "license": "CC0-1.0",
+    "fhirVersion": [
+        "4.0.1"
+    ],
+    "dependsOn": [
+        {
+            "id": "hl7tx",
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+                    "valueMarkdown": "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+                }
+            ],
+            "uri": "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+            "packageId": "hl7.terminology.r4",
+            "version": "5.0.0"
+        },
+        {
+            "id": "ans_annuaire_fhir_r4",
+            "uri": "http://fhir.org/packages/ans.annuaire.fhir.r4/ImplementationGuide/ans.annuaire.fhir.r4",
+            "packageId": "ans.annuaire.fhir.r4",
+            "version": "0.2.0"
+        },
+        {
+            "id": "hl7_fhir_fr_core",
+            "uri": "http://fhir.org/packages/hl7.fhir.fr.core/ImplementationGuide/hl7.fhir.fr.core",
+            "packageId": "hl7.fhir.fr.core",
+            "version": "1.1.0"
+        }
+    ],
+    "definition": {
+        "extension": [
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "copyrightyear"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "2020+"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "releaselabel"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "STU"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "shownav"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "autoload-resources"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "path-liquid"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "template/liquid"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "path-liquid"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "input/liquid"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "path-qa"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "temp/qa"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "path-temp"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "temp/pages"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "path-output"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "output"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "path-suppressed-warnings"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "input/ignoreWarnings.txt"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "path-history"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "https://interop.esante.gouv.fr/ig/fhir/ror/history.html"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "template-html"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "template-page.html"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "template-md"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "template-page-md.html"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "apply-contact"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "apply-context"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "apply-copyright"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "apply-jurisdiction"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "apply-license"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "apply-publisher"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "apply-version"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "active-tables"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "fmm-definition"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "http://hl7.org/fhir/versions.html#maturity"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "propagate-status"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "excludelogbinaryformat"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueString": "tabbed-snapshots"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
+                "valueCode": "hl7.fhir.uv.tools#current"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "copyrightyear"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "2020+"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "releaselabel"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "STU"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "shownav"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "autoload-resources"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "path-liquid"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "template/liquid"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "path-liquid"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "input/liquid"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "path-qa"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "temp/qa"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "path-temp"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "temp/pages"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "path-output"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "output"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "path-suppressed-warnings"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "input/ignoreWarnings.txt"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "path-history"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "https://interop.esante.gouv.fr/ig/fhir/ror/history.html"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "template-html"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "template-page.html"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "template-md"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "template-page-md.html"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "apply-contact"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "apply-context"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "apply-copyright"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "apply-jurisdiction"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "apply-license"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "apply-publisher"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "apply-version"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "active-tables"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "fmm-definition"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "http://hl7.org/fhir/versions.html#maturity"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "propagate-status"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "excludelogbinaryformat"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            },
+            {
+                "extension": [
+                    {
+                        "url": "code",
+                        "valueCode": "tabbed-snapshots"
+                    },
+                    {
+                        "url": "value",
+                        "valueString": "true"
+                    }
+                ],
+                "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+            }
+        ],
+        "resource": [
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:resource"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-healthcareservice"
+                },
+                "name": "RORHealthcareService",
+                "description": "Profil créé dans le cadre du ROR pour décrire les prestations que peut réaliser une structure et qui permettent de répondre au besoin de santé d'une personne",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:resource"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-location"
+                },
+                "name": "RORLocation",
+                "description": "Profil créé dans le cadre du ROR pour décrire l'espace disposant d'un ensemble de ressources pour réaliser une offre.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:resource"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-organization"
+                },
+                "name": "ROROrganization",
+                "description": "Profil créé dans le cadre du ROR pour décrire les organismes du domaine sanitaire, médico-social et social immatriculés dans le FINESS et les organisations internes",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:resource"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-practitioner"
+                },
+                "name": "RORPractitioner",
+                "description": "Profil créée dans le cadre du ROR pour décrire les données d'identification pérennes d’une personne physique, qui travaille en tant que professionnel",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:resource"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-practitionerrole"
+                },
+                "name": "RORPractitionerRole",
+                "description": "Profil créé dans le cadre du ROR pour décrire les modalités d'exercice opérationnelles du profesionnel dans la réalisation de l'offre",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:resource"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-task"
+                },
+                "name": "RORTask",
+                "description": "Anomalie concerant une donnée dans une ressource du ROR",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-available-time-effective-opening-closing-date"
+                },
+                "name": "RORAvailableTimeEffectiveOpeningClosingDate",
+                "description": "Extension créée dans le cadre du ROR pour décrire le planning d'activité d'un professionnel ou d'une offre.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-available-time-number-days-of-week"
+                },
+                "name": "RORAvailableTimeNumberDaysofWeek",
+                "description": "Extension créée dans le cadre du ROR pour indiquer le numéro du jour dans la semaine.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-available-time-type-of-time"
+                },
+                "name": "RORAvailableTimeTypeOfTime",
+                "description": "Extension créée dans le cadre du ROR pour apporter un contexte à la plage horaire définie par la suite. Un planning peut être constitué de plusieurs plages horaires du même type ou de type différent.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-calculated-distance"
+                },
+                "name": "RORCalculatedDistance",
+                "description": "Extension créée dans le cadre du ROR pour transporter la distance calculée",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-commune-cog"
+                },
+                "name": "RORCommuneCog",
+                "description": "Extension créée dans le cadre du ROR pour représenter le code officiel géographique (COG) de la commune dans laquelle le lieu est situé.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-confidentiality-level"
+                },
+                "name": "RORConfidentialityLevel",
+                "description": "Extension créée dans le cadre du ROR pour définir le niveau de restriction de l'accès aux attributs de la classe Contact.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-contact-confidentiality-level"
+                },
+                "name": "RORContactConfidentialityLevel",
+                "description": "Extension créée dans le cadre du ROR qui permet de définir le niveau de restriction de l'accès aux attributs de la classe Contact",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-contact-description"
+                },
+                "name": "RORContactDescription",
+                "description": "Extension créée dans le cadre du ROR qui indique la description du Contact.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-contact-function-contact"
+                },
+                "name": "RORContactFunctionContact",
+                "description": "Extension créée dans le cadre du ROR qui indique un titre, une position ou une fonction de la personne assurant le contact au sein de l'organisation (directeur, secrétaire, etc.).",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-contact-telecom-confidentiality-level"
+                },
+                "name": "RORContactTelecomConfidentialityLevel",
+                "description": "Extension créée dans le cadre du ROR",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-contact-telecom-usage"
+                },
+                "name": "RORContactTelecomUsage",
+                "description": "Extension créée dans le cadre du ROR",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-coordinate-reliability"
+                },
+                "name": "RORCoordinateReliability",
+                "description": "Extension créée dans le cadre du ROR pour signaler si les informations des coordonnées géographiques sont issues d'un mode de production qui assure un certain niveau de fiabilité",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-healthcareservice-contact"
+                },
+                "name": "RORHealthcareServiceContact",
+                "description": "Extension créée dans le cadre du ROR pour décrire la personne ou le service qui agit comme point de contact de l'offre.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-healthcareservice-no-consent-habilitation"
+                },
+                "name": "RORHealthcareServiceNoConsentHabilitation",
+                "description": "Extension créée dans le cadre du ROR qui permet d'identifier les offres pour lesquelles un établissement est autorisé par le directeur général de l’ARS après avis du préfet, à prendre en charge des patients sans leur consentement.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-healthcareservice-patient-type"
+                },
+                "name": "RORHealthcareServicePatientType",
+                "description": "Extension créée dans le cadre du ROR pour décrire un ensemble de personnes qui répondent à des critères leur permettant de  bénéficier de la prestation décrite",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-healthcareservice-psychiatric-sector"
+                },
+                "name": "RORHealthcareServicePsychiatricSector",
+                "description": "Extension créée dans le cadre du ROR qui correspond à une aire géographique à laquelle sont rattachées des structures de relais et de soins qui prennent en charge des patients résidants sur ce secteur.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-healthcareservice-sensitive-unit"
+                },
+                "name": "RORHealthcareServiceSensitiveUnit",
+                "description": "Extension créée dans le cadre du ROR pour signaler que toutes les informations de description d'une offre sont confidentielles car elles présentent un risque d'utilisation à des fins malveillantes.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-location-equipment"
+                },
+                "name": "RORLocationEquipment",
+                "description": "Extension créée dans le cadre du ROR pour décrire une ressource matérielle discriminante pour la réalisation d'une prestation.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-location-equipment-limit"
+                },
+                "name": "RORLocationEquipmentLimit",
+                "description": "Extension créée dans le cadre du ROR qui précise les limites que peut supporter l'équipement le plus tolérant parmi les équipements spécifiques de même type dans cette organisation.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-location-residential-capacity"
+                },
+                "name": "RORLocationResidentialCapacity",
+                "description": "Extension créée dans le cadre du ROR qui décrit un type d'habitation adapté à la réalisation d'une offre.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-location-status"
+                },
+                "name": "RORLocationStatus",
+                "description": "Extension créée dans le cadre du ROR pour indiquer si le lieu est opérationnel, fermé temporairement ou fermé définitivement.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-location-supported-capacity"
+                },
+                "name": "RORLocationSupportedCapacity",
+                "description": "Extension créée dans le cadre du ROR qui indique une série d’enregistrements indiquant la quantité de lit (ou de place) de l'entité pour un statut et une temporalité donnés.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-meta-comment"
+                },
+                "name": "RORMetaComment",
+                "description": "Extension créée dans le cadre du ROR qui correspond au commentaire présent dans les métadonnées.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-meta-creation-date"
+                },
+                "name": "RORMetaCreationDate",
+                "description": "Extension créée dans le cadre du ROR qui correspond à la date de création (dans le ROR régional) présente dans les métadonnées.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-organization-accessibility-location"
+                },
+                "name": "ROROrganizationAccessibilityLocation",
+                "description": "Extension créée dans le cadre du ROR qui précise dans quelle mesure les locaux sont conformes aux dispositions règlementaires relatives à l’accessibilité des établissements recevant du public. ",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-organization-accomodation-family"
+                },
+                "name": "ROROrganizationAccomodationFamily",
+                "description": "Extension créée dans le cadre du ROR pour préciser si l'établissement peut héberger les familles des personnes prises en charge.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-organization-additional-name"
+                },
+                "name": "ROROrganizationAdditionalName",
+                "description": "Extension créée dans le cadre du ROR pour décrire le complément de la raison sociale",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-organization-closing-type"
+                },
+                "name": "ROROrganizationClosingType",
+                "description": "Extension créée dans le cadre du ROR pour définir le type de fermeture de l'organisation.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-organization-comment"
+                },
+                "name": "ROROrganizationComment",
+                "description": "Extension créée dans le cadre du ROR pour décrire le commentaire qui permet à la structure de donner des informations complémentaires",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-organization-creation-date"
+                },
+                "name": "ROROrganizationCreationDate",
+                "description": "Extension créée dans le cadre du ROR pour définir la date de création de l'entité juridique.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-organization-drop-zone"
+                },
+                "name": "ROROrganizationDropZone",
+                "description": "Extension créée dans le cadre du ROR pour préciser l’existence d’une zone de poser pour hélicoptère sur le site concerné.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-organization-financial-help-type"
+                },
+                "name": "ROROrganizationFinancialHelpType",
+                "description": "Extension créée dans le cadre du ROR pour préciser l'aide financière pour laquelle l'EG dispose d'une habilitation ou conventionnement qui permet aux personnes accueillies d'en bénéficier si elles remplissent les conditions.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-organization-level-recours-orsan"
+                },
+                "name": "ROROrganizationLevelRecourseORSAN",
+                "description": "Extension créée dans le cadre du ROR pour décrire une hiérarchisation fonctionnelle de la mobilisation des établissements pour accueillir les patients après régulation par le SAMU.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-organization-nb-permanent-social-help-place"
+                },
+                "name": "ROROrganizationNbPermanentSocialHelpPlace",
+                "description": "Extension créée dans le cadre du ROR pour indiquer le nombre de places permanentes dédiées à l'aide sociale dans l'établissement",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-organization-nb-temporary-social-help-place"
+                },
+                "name": "ROROrganizationNbTemporarySocialHelpPlace",
+                "description": "Extension créée dans le cadre du ROR pour indiquer le nombre de places temporaires dédiées à l'aide sociale dans l'établissement",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-organization-price"
+                },
+                "name": "ROROrganizationPrice",
+                "description": "Extension créée dans le cadre du ROR pour permettre de définir les tarifs des prestations et services d'une entité géographique.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-organization-reopening-date"
+                },
+                "name": "ROROrganizationReopeningDate",
+                "description": "Extension créée dans le cadre du ROR pour définir la date prévisionnelle de réouverture de l'organisation interne.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/RORPractitionerRoleName"
+                },
+                "name": "RORPractitionerRoleName",
+                "description": "Extension créée dans le cadre du ROR pour définir l'identité d’exercice d’un professionnel",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-practitionerrole-unit-exercise-mode"
+                },
+                "name": "RORPractitionerRoleUnitExerciseMode",
+                "description": "Extension créée dans le cadre du ROR qui correspond au statut du professionnel lorsqu'il exerce dans le cadre de l'offre décrite.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-telecom-communication-channel"
+                },
+                "name": "RORTelecomCommunicationChannel",
+                "description": "Extension créée dans le cadre du ROR spécifiant le canal ou la manière dont s'établit la communication ",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-telecom-confidentiality-level"
+                },
+                "name": "RORTelecomConfidentialityLevel",
+                "description": "Extension créée dans le cadre du ROR qui permet de définir le niveau de restriction de l'accès aux attributs de la classe Télécommunication.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-telecom-usage"
+                },
+                "name": "RORTelecomUsage",
+                "description": "Extension créée dans le cadre du ROR qui précise l'utilisation du canal de communication ",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "StructureDefinition:extension"
+                    }
+                ],
+                "reference": {
+                    "reference": "StructureDefinition/ror-territorial-division"
+                },
+                "name": "RORTerritorialDivision",
+                "description": "Extension créée dans le cadre du ROR qui correspond au périmètre géographique dans lequel habitent les personnes pouvant être prises en charge pour la prestation décrite. \nCela inclut notamment les divisions territoriales dans lesquelles les professionnels se déplacent.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "ValueSet"
+                    }
+                ],
+                "reference": {
+                    "reference": "ValueSet/code-region-territorial-division"
+                },
+                "name": "Fusion des valuesets pour le code de la division territoriale",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "CodeSystem"
+                    }
+                ],
+                "reference": {
+                    "reference": "CodeSystem/input-task-ror-codesystem"
+                },
+                "name": "InputTaskRORCodeSystem",
+                "description": "Code System pour la définition des éléments spécifiques de input dans ressource RORTask",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "CodeSystem"
+                    }
+                ],
+                "reference": {
+                    "reference": "CodeSystem/output-task-ror-codesystem"
+                },
+                "name": "OutputTaskRORCodeSystem",
+                "description": "Code System pour la définition des éléments spécifiques de output dans ressource RORTask",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "CapabilityStatement"
+                    }
+                ],
+                "reference": {
+                    "reference": "CapabilityStatement/ror-consommateur"
+                },
+                "name": "ror-consommateur",
+                "description": "Système qui est autorisé à consommer les données du ROR.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "CapabilityStatement"
+                    }
+                ],
+                "reference": {
+                    "reference": "CapabilityStatement/ror-serveur"
+                },
+                "name": "ror-serveur",
+                "description": "Système ROR National Le Répertoire Opérationnel des Ressources (ROR) est le gisement de données qui décrit les offres de santé au niveau national.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-additional-bed-type"
+                },
+                "name": "ror-sp-additional-bed-type",
+                "description": "Paramètre de recherche pour récupérer les types des lits disponnibles",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-capacity-closing-type"
+                },
+                "name": "ror-sp-capacity-closing-type",
+                "description": "Paramètre de recherche pour récupérer le type de la fermeture de la capacité",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-capacity-status"
+                },
+                "name": "ror-sp-capacity-status",
+                "description": "Paramètre de recherche pour récupérer le statut de la capacité.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-capacity-type"
+                },
+                "name": "ror-sp-capacity-type",
+                "description": "Paramètre de recherche pour récupérer la nature de la capacité.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-capacity-update-date"
+                },
+                "name": "ror-sp-capacity-update-date",
+                "description": "Paramètre de recherche pour récupérer la date à jour de la capacité",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-crisis-type"
+                },
+                "name": "ror-sp-crisis-type",
+                "description": "Paramètre de recherche pour récupérer le type de la crise",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-equipment-feature"
+                },
+                "name": "ror-sp-equipment-feature",
+                "description": "Paramètre de recherche pour récupérer le type de caractéristique d'un equipement.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-equipment-type"
+                },
+                "name": "ror-sp-equipment-type",
+                "description": "Paramètre de recherche pour récupérer le type d'un équipement.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-gender-capacity-available"
+                },
+                "name": "ror-sp-gender-capacity-available",
+                "description": "Paramètre de recherche pour récupérer le genre disponible de la capacité.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-healthcareservice-age-range-high"
+                },
+                "name": "ror-sp-healthcareservice-age-range-high",
+                "description": "Paramètre de recherche décrivant l'age maximum de la patientèle",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-healthcareservice-age-range-low"
+                },
+                "name": "ror-sp-healthcareservice-age-range-low",
+                "description": "Paramètre de recherche décrivant l'age minimum de la patientèle",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-healthcareservice-equipment-type"
+                },
+                "name": "ror-sp-healthcareservice-equipment-type",
+                "description": "Paramètre de recherche décrivant le type d'équipement de l'offre opérationnelle",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-healthcareservice-intervention-zone"
+                },
+                "name": "ror-sp-healthcareservice-intervention-zone",
+                "description": "Paramètre de recherche décrivant la zone d'intervention",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-healthcareservice-patient-type"
+                },
+                "name": "ror-sp-healthcareservice-patient-type",
+                "description": "Paramètre de recherche décrivant le public pris en charge",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-healthcareservice-psychiatric-sector"
+                },
+                "name": "ror-sp-healthcareservice-psychiatric-sector",
+                "description": "Paramètre de recherche décrivrant le secteur psychiatrique de l'offre opérationnelle",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-limit-value"
+                },
+                "name": "ror-sp-limit-value",
+                "description": "Paramètre de recherche pour récupérer la valeur limite (poids, taille, etc..) de l'équipement",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-location-commune-cog"
+                },
+                "name": "ror-sp-location-commune-cog",
+                "description": "Paramètre de recherche sur le code officiel géographique (cog) de la commune dans laquelle le lieu est situé",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-location-near-insee-code"
+                },
+                "name": "ror-sp-location-near-insee-code",
+                "description": "Paramètre de recherche similaire au paramètre spécial \"near\", à l'exception que celui-ci pointe sur l'adresse et non pas la position géographique",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-nb-capacity"
+                },
+                "name": "ror-sp-nb-capacity",
+                "description": "Paramètre de recherche pour récupérer le nombre de la capacité.",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-organization-closing-type"
+                },
+                "name": "ror-sp-organization-closing-type",
+                "description": "Paramètre de recherche décrivant le type de fermeture de l'entité géographique, au sens des règles de gestion du SI FINESS",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-organization-drop-zone"
+                },
+                "name": "ror-sp-organization-drop-zone",
+                "description": "Paramètre de recherche permettant d'indiquer s'il y a une zone poser sur le site concerné",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-organization-oi-name"
+                },
+                "name": "ror-sp-organization-oi-name",
+                "description": "Paramètre de recherche sur le nom de l'organisation interne",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-organization-period-end"
+                },
+                "name": "ror-sp-organization-period-end",
+                "description": "Paramètre de recherche décrivant la date de fermeture de l'entité géographique",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-residential-number"
+                },
+                "name": "ror-sp-residential-number",
+                "description": "Paramètre de recherche pour récupérer le nombre d'habitation",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-residential-type"
+                },
+                "name": "ror-sp-residential-type",
+                "description": "Paramètre de recherche pour récupérer le type d'habitation",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-temporality-capacity"
+                },
+                "name": "ror-sp-temporality-capacity",
+                "description": "Paramètre de recherche pour récupérer le moment où la capacité sera effective",
+                "exampleBoolean": false
+            },
+            {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+                        "valueString": "SearchParameter"
+                    }
+                ],
+                "reference": {
+                    "reference": "SearchParameter/ror-sp-temporary-assignement"
+                },
+                "name": "ror-sp-temporary-assignement",
+                "description": "Paramètre de recherche pour récupérer les affectations temporaires",
+                "exampleBoolean": false
+            }
+        ],
+        "page": {
+            "extension": [
+                {
+                    "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                    "valueUrl": "toc.html"
+                }
+            ],
+            "nameUrl": "toc.html",
+            "title": "Table of Contents",
+            "generation": "html",
+            "page": [
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                            "valueUrl": "index.html"
+                        }
+                    ],
+                    "nameUrl": "index.html",
+                    "title": "Accueil",
+                    "generation": "markdown"
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                            "valueUrl": "specifications_fonctionnelles.html"
+                        }
+                    ],
+                    "nameUrl": "specifications_fonctionnelles.html",
+                    "title": "Specifications Fonctionnelles",
+                    "generation": "markdown"
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                            "valueUrl": "specifications_techniques_1.html"
+                        }
+                    ],
+                    "nameUrl": "specifications_techniques_1.html",
+                    "title": "Consultation des données capacitaires",
+                    "generation": "markdown"
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                            "valueUrl": "specifications_techniques_2.html"
+                        }
+                    ],
+                    "nameUrl": "specifications_techniques_2.html",
+                    "title": "Consultation de l'offre (extraction)",
+                    "generation": "markdown"
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                            "valueUrl": "specifications_techniques_3.html"
+                        }
+                    ],
+                    "nameUrl": "specifications_techniques_3.html",
+                    "title": "Recherche d'offre sur critères principaux",
+                    "generation": "markdown"
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                            "valueUrl": "specifications_techniques_4.html"
+                        }
+                    ],
+                    "nameUrl": "specifications_techniques_4.html",
+                    "title": "Recherche d'offre avec données capacitaires",
+                    "generation": "markdown"
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                            "valueUrl": "specifications_techniques_5.html"
+                        }
+                    ],
+                    "nameUrl": "specifications_techniques_5.html",
+                    "title": "Signalement d’anomalie",
+                    "generation": "markdown"
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                            "valueUrl": "specifications_techniques_6.html"
+                        }
+                    ],
+                    "nameUrl": "specifications_techniques_6.html",
+                    "title": "Mise à jour d’anomalie",
+                    "generation": "markdown"
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                            "valueUrl": "specifications_techniques_7.html"
+                        }
+                    ],
+                    "nameUrl": "specifications_techniques_7.html",
+                    "title": "Consultation d’anomalie",
+                    "generation": "markdown"
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                            "valueUrl": "search_param.html"
+                        }
+                    ],
+                    "nameUrl": "search_param.html",
+                    "title": "Critères de recherche",
+                    "generation": "markdown"
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                            "valueUrl": "modifiers.html"
+                        }
+                    ],
+                    "nameUrl": "modifiers.html",
+                    "title": "Paramètres et modificateurs de requêtes FHIR",
+                    "generation": "markdown"
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                            "valueUrl": "annexes.html"
+                        }
+                    ],
+                    "nameUrl": "annexes.html",
+                    "title": "Annexes",
+                    "generation": "markdown"
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                            "valueUrl": "mapping.html"
+                        }
+                    ],
+                    "nameUrl": "mapping.html",
+                    "title": "Mapping FHIR du modèle de données du ROR",
+                    "generation": "markdown"
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                            "valueUrl": "downloads.html"
+                        }
+                    ],
+                    "nameUrl": "downloads.html",
+                    "title": "Téléchargements et usages",
+                    "generation": "markdown",
+                    "page": [
+                        {
+                            "extension": [
+                                {
+                                    "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                                    "valueUrl": "securite.html"
+                                }
+                            ],
+                            "nameUrl": "securite.html",
+                            "title": "Sécurité",
+                            "generation": "markdown"
+                        }
+                    ]
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                            "valueUrl": "autres_ressources.html"
+                        }
+                    ],
+                    "nameUrl": "autres_ressources.html",
+                    "title": "Autres Ressources",
+                    "generation": "markdown"
+                },
+                {
+                    "extension": [
+                        {
+                            "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+                            "valueUrl": "about.html"
+                        }
+                    ],
+                    "nameUrl": "about.html",
+                    "title": "A propos de ce guide",
+                    "generation": "markdown"
+                }
+            ]
+        },
+        "parameter": [
+            {
+                "code": "path-resource",
+                "value": "input/capabilities"
+            },
+            {
+                "code": "path-resource",
+                "value": "input/examples"
+            },
+            {
+                "code": "path-resource",
+                "value": "input/extensions"
+            },
+            {
+                "code": "path-resource",
+                "value": "input/models"
+            },
+            {
+                "code": "path-resource",
+                "value": "input/operations"
+            },
+            {
+                "code": "path-resource",
+                "value": "input/profiles"
+            },
+            {
+                "code": "path-resource",
+                "value": "input/resources"
+            },
+            {
+                "code": "path-resource",
+                "value": "input/vocabulary"
+            },
+            {
+                "code": "path-resource",
+                "value": "input/maps"
+            },
+            {
+                "code": "path-resource",
+                "value": "input/testing"
+            },
+            {
+                "code": "path-resource",
+                "value": "input/history"
+            },
+            {
+                "code": "path-resource",
+                "value": "fsh-generated/resources"
+            },
+            {
+                "code": "path-pages",
+                "value": "template/config"
+            },
+            {
+                "code": "path-pages",
+                "value": "input/images"
+            },
+            {
+                "code": "path-tx-cache",
+                "value": "input-cache/txcache"
+            }
+        ]
+    }
+}

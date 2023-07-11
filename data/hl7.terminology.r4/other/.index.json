@@ -1,0 +1,17 @@
+{
+  "index-version": 1,
+  "files": [
+    {
+      "filename": "validation-oo.json",
+      "resourceType": "Bundle",
+      "type": "collection"
+    },
+    {
+      "filename": "ig-r4.json",
+      "resourceType": "ImplementationGuide",
+      "id": "hl7.terminology",
+      "url": "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+      "version": "5.0.0"
+    }
+  ]
+}
