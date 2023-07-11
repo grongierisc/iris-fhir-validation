@@ -11,6 +11,8 @@ FROM intersystemsdc/irishealth-community:preview as final
 
 COPY . /irisdev/app
 
+RUN pip install -r /irisdev/app/requirements.txt
+
 ADD --chown=${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} https://github.com/grongierisc/iris-docker-multi-stage-script/releases/latest/download/copy-data.py /irisdev/app/copy-data.py
 
 RUN --mount=type=bind,source=/,target=/builder/root,from=builder \
