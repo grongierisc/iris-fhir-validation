@@ -48,6 +48,20 @@ def update_capability_statement(endpoint_name,json_file):
     newCapabilityStatement = iris.cls('%Library.DynamicObject')._FromJSONFile("/irisdev/app/data/ans.fhir.fr.ror/CapabilityStatement-ror-serveur.json")
     interactions.SetMetadata(newCapabilityStatement)
 
+def create_endpoint(endpoint_name):
+    appKey = endpoint_name
+    strategyClass = 'HS.FHIRServer.Storage.Json.InteractionsStrategy'
+    metadataPackages = DollarList()
+    metadataPackages.append("hl7.fhir.r4.core@4.0.1")
+    iris.cls('HS.FHIRServer.Installer').InstallInstance(appKey, strategyClass, metadataPackages.to_bytes())
+
+    #Configure FHIR Service instance to accept unauthenticated requests
+    strategy = iris.cls('HS.FHIRServer.API.InteractionsStrategy').GetStrategyForEndpoint(appKey)
+    config = strategy.GetServiceConfigData()
+    config.DebugMode = 6
+    config.MaxSearchResults = 100000
+    strategy.SaveServiceConfigData(config)
+
 if __name__ == '__main__':
     # create a simple command line interface
     import argparse
@@ -59,6 +73,7 @@ if __name__ == '__main__':
     parser.add_argument('--list-endpoint', action='store_true', help='List packages of endpoint')
     parser.add_argument('--index', nargs='+', help='Index endpoint')
     parser.add_argument('--update-capability-statement', nargs='+', help='Update capability statement of endpoint')
+    parser.add_argument('--create-endpoint', nargs='+', help='Create endpoint')
 
     args = parser.parse_args()
 
@@ -66,6 +81,8 @@ if __name__ == '__main__':
         list_of_packages()
     elif args.imports:
         import_package(args.imports)
+    elif args.create_endpoint:
+        create_endpoint(args.create_endpoint[0])
     elif args.delete:
         for package in args.delete:
             delete_package(package)

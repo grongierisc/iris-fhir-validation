@@ -53,21 +53,6 @@
     set config.MaxSearchResults = 100000
     do strategy.SaveServiceConfigData(config)
 
-    // Install Package for ROR Service
-    set namespace="FHIRSERVER"
-    Set appKey = "/fhir/ror"
-    Set strategyClass = "HS.FHIRServer.Storage.Json.InteractionsStrategy"
-    set metadataPackages = $lb("hl7.fhir.r4.core@4.0.1")
-
-    Do ##class(HS.FHIRServer.Installer).InstallInstance(appKey, strategyClass, metadataPackages)
-
-    // Configure FHIR Service instance to accept unauthenticated requests
-    set strategy = ##class(HS.FHIRServer.API.InteractionsStrategy).GetStrategyForEndpoint(appKey)
-    set config = strategy.GetServiceConfigData()
-    set config.DebugMode = 6
-    set config.MaxSearchResults = 100000
-    do strategy.SaveServiceConfigData(config)
-
     // Load FHIR data
     do ##class(HS.FHIRServer.Tools.DataLoader).SubmitResourceFiles("/irisdev/app/data/fhir", "FHIRSERVER", "/fhir/r4")
 

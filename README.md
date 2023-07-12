@@ -453,7 +453,11 @@ To demonstrate the capabilities of the FHIR server, we have created a ROR server
 
 The ROR server will be available at the endpoint `/fhir/ror`.
 
-For now, it's raw R4 FHIR Server, so we need to add the package `ans.fhir.fr.ror` to the FHIR server and update the CapabilityStatement.
+### Create the endpoint
+
+```bash
+/usr/irissys/bin/irispython /irisdev/app/src/python/profile_helper.py --create-endpoint /fhir/ror
+```
 
 ### Import the package
 
@@ -489,7 +493,6 @@ Try to get a Patient with the ROR server
 ```http
 GET http://localhost:8083/fhir/ror/Patient/1
 Accept: application/json+fhir
-Authorization: Basic U3VwZXJVc2VyOlNZUw==
 ```
 
 It fails because of the capability statement of the ROR server.
@@ -513,10 +516,9 @@ It fails because of the capability statement of the ROR server.
 Get a location
 
 ```http
-GET http://localhost:8083/fhir/ror/Location
+GET http://localhost:8083/fhir/ror/Location?nb-capacity=2
 Content-Type: application/json+fhir
 Accept: application/json+fhir
-Authorization: Basic U3VwZXJVc2VyOlNZUw==
 ```
 
 Nothing for now because the IG doesn't provide any example yet.
